@@ -1,105 +1,120 @@
-# TrustDrive: Blockchain-based Supply Chain Management
+# 🚚 TrustDrive: Blockchain-Powered Supply Chain Management
 
-TrustDrive is a decentralized application (dApp) for tracking and verifying products across a supply chain using blockchain technology. It ensures transparency and authenticity from manufacturer to end vendor.
+TrustDrive is a full-stack decentralized application (dApp) designed to bring **transparency**, **trust**, and **tamper-proof tracking** to modern supply chains. By leveraging Ethereum smart contracts and a clean UI, it ensures that every product — from manufacturing to delivery — is verifiably authentic.
 
-## Features
-- Track products through manufacturer, transporter, distributor, and vendor stages
-- Verify product genuineness using blockchain
-- User and admin registration/login with PostgreSQL database
-- Smart contract for immutable product tracking
-- Modern React frontend and RESTful backend API
+## 🌟 Key Features
+- 🔄 Track product flow across **manufacturer → transporter → distributor → vendor**
+- 🔐 Verify product authenticity using blockchain-backed smart contracts
+- 👤 Secure user/admin registration and login via PostgreSQL
+- ⛓️ Immutable product lifecycle logging with **Solidity smart contracts**
+- 💻 Intuitive React frontend with a RESTful Node.js backend
 
-## Tech Stack
+## 🛠️ Tech Stack
 - **Frontend:** React, Axios, Web3.js, React Router
 - **Backend:** Node.js, Express, PostgreSQL
 - **Blockchain:** Solidity, Hardhat, Ethereum (Sepolia testnet)
 
-## Directory Structure
-```
+---
+
+## 📁 Project Structure
+```bash
 trustdrive_mini_project/
-├── contracts/           # Solidity smart contract(s)
+├── contracts/           # Solidity smart contracts
 │   └── smart_contract.sol
-├── scripts/             # Hardhat deployment scripts
+├── scripts/             # Deployment scripts using Hardhat
 │   ├── deploy.js
 │   └── final_deploy.js
-├── trustdrive/          # React frontend
+├── trustdrive/          # Frontend (React)
 │   ├── src/
 │   └── ...
-├── trustdrive_server/   # Node.js backend
+├── trustdrive_server/   # Backend (Node.js + PostgreSQL)
 │   ├── server.js
 │   ├── database.js
 │   └── ...
-├── hardhat.config.js    # Hardhat configuration
+├── hardhat.config.js    # Blockchain configuration
 └── README.md            # Project documentation (this file)
 ```
 
-## Prerequisites
+---
+
+## ⚙️ Prerequisites
 - Node.js (v16+ recommended)
 - npm
-- PostgreSQL
-- [Metamask](https://metamask.io/) (for interacting with the dApp)
+- PostgreSQL (for user data)
+- [MetaMask](https://metamask.io/) (for blockchain wallet access)
 
-## Setup Instructions
+---
 
-### 1. Clone the Repository
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
 ```bash
 git clone <repo-url>
 cd trustdrive_mini_project
 ```
 
-### 2. Install Dependencies
-Install for each subproject:
+### 2️⃣ Install Dependencies
 ```bash
 cd trustdrive
 npm install
 cd ../trustdrive_server
 npm install
 cd ..
-npm install   # For Hardhat and scripts
+npm install  # For Hardhat dependencies
 ```
 
-### 3. Configure Environment
-- **PostgreSQL:**
-  - Create a database (default: `mini_project`)
-  - Update credentials in `trustdrive_server/database.js` if needed
-- **Hardhat:**
-  - Create a `.env` file in the root with:
-    ```
-    SEPOLIA_URL=<your_sepolia_rpc_url>
-    PRIVATE_KEY=<your_private_key>
-    ```
+### 3️⃣ Configure Environment Variables
+Create a `.env` file in the root with:
+```
+SEPOLIA_URL=<your_sepolia_rpc_url>
+PRIVATE_KEY=<your_private_key>
+```
+Make sure to update DB credentials in `trustdrive_server/database.js`.
 
-### 4. Deploy the Smart Contract
+### 4️⃣ Deploy Smart Contract
 ```bash
 npx hardhat run scripts/deploy.js --network sepolia
 ```
-- Note the deployed contract address for frontend/backend integration.
+Save the deployed contract address for integration.
 
-### 5. Start the Backend Server
+### 5️⃣ Start Backend Server
 ```bash
 cd trustdrive_server
 npm run dev
 ```
 
-### 6. Start the Frontend
+### 6️⃣ Start Frontend
 ```bash
 cd trustdrive
 npm start
 ```
-- The app will be available at [http://localhost:3000](http://localhost:3000)
+Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Usage
-- Register and login as admin or user
-- Add and track products through the supply chain
-- Verify product authenticity using the blockchain
+---
 
-## Smart Contract Overview
-- Written in Solidity (`contracts/smart_contract.sol`)
-- Tracks product lifecycle: manufacturer → transporter → distributor → vendor
-- Provides functions to add and retrieve product details, and check genuineness
+## 🧪 How to Use
+- Register/login as **admin** or **user**
+- Admin can add and update product details as they pass through the supply chain
+- Users can view and verify a product’s lifecycle via blockchain verification
 
-## Scripts
-- `scripts/deploy.js`: Deploys the smart contract and demonstrates usage
+---
 
-## License
-This project is licensed under the MIT License.
+## 📜 Smart Contract Highlights
+- Tracks a product's complete journey through the supply chain
+- Functions include: addProduct, updateStage, verifyAuthenticity
+- Immutable logs ensure no tampering or data loss
+
+---
+
+## 📂 Scripts
+- `scripts/deploy.js`: Compiles and deploys contracts to Sepolia testnet
+- `scripts/final_deploy.js`: Extended script with usage examples
+
+---
+
+## 🪪 License
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+> 💡 *TrustDrive brings truth to logistics. Because trust should be built-in — not assumed.*
