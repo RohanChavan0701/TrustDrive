@@ -110,10 +110,7 @@ Navigate to [http://localhost:3000](http://localhost:3000)
 - `scripts/deploy.js`: Compiles and deploys contracts to Sepolia testnet
 - `scripts/final_deploy.js`: Extended script with usage examples
 
----
 
-## 🪪 License
-This project is licensed under the [MIT License](LICENSE).
 
 ---
 
